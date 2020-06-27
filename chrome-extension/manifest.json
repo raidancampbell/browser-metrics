@@ -1,0 +1,17 @@
+{
+  "name": "Browser Metrics",
+  "version": "1.0",
+  "description": "Blindly send everything to your local HTTP server",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "manifest_version": 2
+}

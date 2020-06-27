@@ -1,0 +1,3 @@
+ListenPort: 60606
+LogLevel: 'debug'
+DatasourceLocation: 'browser-metrics.sqlite'
