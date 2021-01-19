@@ -4,8 +4,8 @@ import "github.com/jinzhu/gorm"
 
 type CommentTable struct {
 	gorm.Model
-	Comment string `gorm:"unique_index:unique_comments"`
-	URL     string `gorm:"unique_index:unique_comments"`
+	Comment string `gorm:"unique_index"`
+	URL     string
 }
 
 func (CommentTable) TableName() string {

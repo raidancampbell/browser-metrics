@@ -36,5 +36,5 @@ func main() {
 	r := gin.Default()
 	r.POST(fmt.Sprintf("/api/v1/visit/*%s", handlers.URLParameterHolder), handlers.GormWrapper(db.DB, handlers.HandleURL))
 
-	logrus.Errorf("HTTP Server stopped with reason '%w'", r.Run(":60606"))
+	logrus.Errorf("HTTP Server stopped with reason '%w'", r.Run("0.0.0.0:60606"))
 }
