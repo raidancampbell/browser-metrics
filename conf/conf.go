@@ -10,14 +10,14 @@ import (
 
 const configFilename = "config.yml"
 
-type conf struct {
+type Conf struct {
 	ListenPort         int
 	LogLevel           string
 	DatasourceLocation string
 }
 
-func Initialize() *conf {
-	var c conf
+func Initialize() *Conf {
+	var c Conf
 	viper.SetConfigType("yaml")
 	viper.SetConfigFile(configFilename)
 	err := viper.ReadInConfig()
@@ -38,7 +38,7 @@ func Initialize() *conf {
 	return &c
 }
 
-func initLogger(config *conf) {
+func initLogger(config *Conf) {
 	lvl, err := logrus.ParseLevel(config.LogLevel)
 	if err != nil {
 		logrus.Warnf("Unable to parse log level '%s', defaulting to info...", config.LogLevel)
